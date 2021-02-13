@@ -1,19 +1,17 @@
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
-#include "State.h"
+#include "Wallet.h"
 #include<bits/stdc++.h>
 using namespace std;
-
 class Transaction
 {
     public:
-        State * curr_state;
-        bool inp;
-        State * next_state;
-        int op;
-        Transaction(State * cr,State * op,bool input,int inp);
+        Wallet * first_party;
+        Wallet * second_party;
+        double transferred_amount;
+        Transaction(Wallet * f,Wallet * sec,double amt);
         virtual ~Transaction();
-
+        bool Offer1();
     protected:
 
     private:
